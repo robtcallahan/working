@@ -1,0 +1,14 @@
+bld-prd-rhel68-x86_64-02
+bld-prd-rhel68-x86_64-03
+bld-prd-rhel7-x86_64-01
+bld-prd-rhel7-x86_64-02
+bld-prd-rhel7-x86_64-03
+bld-prd-ubuntu1404-amd64-01
+bld-prd-ubuntu1404-amd64-03
+bld-prod-rhel7-x86_64-01
+bld-prod-rhel7-x86_64-02
+bld-stk-dev-05
+devops-dhcp243
+stk-dhcp-10-130-0-10
+stk-dhcp-10-130-0-13
+velo-manpack
