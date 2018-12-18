@@ -3,15 +3,20 @@
 profile="--profile idirect-enterprise"
 posted="To be posted"
 #topdir=/dump/Jessica\ Software\ Archive\ 1\ as\ of\ 8_17_2018
-topdir=/dump/Jessica\ Software\ Archive\ 2\ as\ of\ 8_17_2018
+#topdir=/dump/Jessica\ Software\ Archive\ 2\ as\ of\ 8_17_2018
+topdir=/jessica
 
 cd "$topdir"
-cat "$topdir/releases.txt" | while read -r reldir; do
+cat "/tmp/releases.txt" | while read -r reldir; do
   echo $reldir
   aws s3api put-object --bucket idirect-releases --key "$reldir/" $profile
   cd "$reldir"
 
-  cd "$(find . -name To\ be\ posted)" || exit 1
+  check=$(find . -name To\ be\ posted)
+  if [[ $check != "" ]]; then
+    echo "    cd $check"
+    cd "$check"
+  fi
 
   ls -f . | while read -r file; do
     if [[ $file == "." || $file == ".." ]]; then
