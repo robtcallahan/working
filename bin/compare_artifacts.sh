@@ -64,9 +64,10 @@ echo "${s3_artifacts}" | while read s3_artifact; do
   version_num=$(echo "${s3_artifact}" | sed 's/.* \([0-9\.].*[0-9]\)\..*/\1/')
   if [[ ${debug} == 1 ]]; then echo "version_num=${version_num}"; fi
 
+  #echo ""
   # parse the release and convert to URL
-  major_version=$(echo ${release} | sed 's/iDX \([0-9]\)\.[0-9]..*/\1/')
-  if [[ ${debug} == 1 ]]; then echo "major_version=${major_version}"; fi
+  major_version=$(echo ${release} | sed 's/iDX \([0-9]\)\..*/\1/')
+  #echo "major_version=${major_version}"
   release_url=$(echo ${release} | sed  's/ /-/g' | sed 's/\./_/g' | sed 's/Restricted/RESTRICTED/')
   release_url2=$(echo ${release_url} | sed 's/-RESTRICTED//')
   if [[ ${debug} == 1 ]]; then echo "release_url=${release_url}"; fi
